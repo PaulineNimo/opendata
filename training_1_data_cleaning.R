@@ -43,4 +43,10 @@ schools$Sponsor.of.School <- gsub("LOCAL GOVERNMENT AUTHORITY","LOCAL AUTHORITY"
 schools$Sponsor.of.School <- gsub("LOCAL GORVERNMENT AUTHORITY","LOCAL AUTHORITY",schools$Sponsor.of.School)
 unique(schools$Sponsor.of.School)
 
+schools$Sponsor.of.School <- gsub("RELIGIOUS ORGANIZATION","RELIGIOUS ORGANISATION",schools$Sponsor.of.School)
+
+schools$Sponsor.of.School <- gsub("PRIVATE INDIVIDUAL/ORGANISATION","PRIVATE INDIVIDUAL",schools$Sponsor.of.School)
+schools$Sponsor.of.School <- gsub("PRIVATE INDIVIDUAL/ORGANIZATION","PRIVATE INDIVIDUAL",schools$Sponsor.of.School)
+
+schools$Sponsor.of.School <- gsub("COMMUNITY","NGO/CBO",schools$Sponsor.of.School)
 
