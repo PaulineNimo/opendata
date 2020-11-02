@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style type="css/style">
+    div.tooltip {   
+    position: absolute;         
+    text-align: center;         
+    width: 60px;                    
+    height: 28px;                   
+    padding: 2px;               
+    font: 12px sans-serif;      
+    background: lightsteelblue; 
+    border: 0px;        
+    border-radius: 8px;         
+    pointer-events: none;           
+}
+</style>
+<title>Government Projects</title>
+	<script type="text/javascript" src="d3.min.js"></script>
+	<script type="text/javascript" src="topojson.v1.min.js"></script>
+	<script type="text/javascript" src="d3.v3.min.js"></script>
+	<script type="text/javascript" src="leaflet.js"></script>
+    <link rel="stylesheet" type="text/css" href="leaflet.css"></link>
+</head>
+
+<body>
+<h3>All Projects</h3>
+<div id="projects_list" style="position: absolute; top: 60px; left: 25px;">
+<input type="checkbox" id="DLP" onclick="selectDLP()"/>Digital Literacy Programme<br>
+<label>
+<input type="checkbox" id="NOFBI" onclick="selectNOFBI()"/>National Optic Fibre Backbone Infrastructure
+</label>
+</div>
+
+
+
+
+<select id="county_list" name="county_list" onchange="configureDropDownLists(this,document.getElementById('constituency_list'))"; style="position: absolute; top: 150px; left: 25px">
+<option selected="selected" value="counties">Counties</option>
+<option value="baringo">Baringo</option>
+<option value="bomet">Bomet</option>
+<option value="busia">Busia</option>
+<option value="bungoma">Bungoma</option>
+<option value="elgeyo_marakwet">Elgeyo Marakwet</option>
+<option value="embu">Embu</option>
+<option value="garissa">Garissa</option>
+<option value="homa_bay">Homa Bay</option>
+<option value="isiolo">Isiolo</option>
+<option value="kajiado">Kajiado</option>
+<option value="kakamega">Kakamega</option>
+<option value="kericho">Kericho</option>
+<option value="kiambu">Kiambu</option>
+<option value="kilifi">Kilifi</option>
+<option value="kirinyaga">Kirinyaga</option>
+<option value="kisii">Kisii</option>
+<option value="kisumu">Kisumu</option>
+<option value="kitui">Kitui</option>
+<option value="kwale">Kwale</option>
+<option value="laikipia">Laikipia</option>
+<option value="lamu">Lamu</option>
+<option value="machakos">Machakos</option>
+<option value="makueni">Makueni</option>
+<option value="mandera">Mandera</option>
+<option value="marsabit">Marsabit</option>
+<option value="meru">Meru</option>
+<option value="migori">Migori</option>
+<option value="mombasa">Mombasa</option>
+<option value="muranga">Murang'a</option>
+<option value="nairobi">Nairobi</option>
+<option value="nakuru">Nakuru</option>
+<option value="nandi">Nandi</option>
+<option value="narok">Narok</option>
+<option value="nyamira">Nyamira</option>
+<option value="nyandarua">Nyandarua</option>
+<option value="nyeri">Nyeri</option>
+<option value="siaya">Siaya</option>
+<option value="samburu">Samburu</option>
+<option value="taita_taveta">Taita Taveta</option>
+<option value="tana_river">Tana River</option>
+<option value="tharaka_nithi">Tharaka Nithi</option>
+<option value="trans_nzoia">Trans Nzoia</option>
+<option value="turkana">Turkana</option>
+<option value="uasin_gishu">Uasin Gishu</option>
+<option value="vihiga">Vihiga</option>
+<option value="wajir">Wajir</option>
+<option value="west_pokot">West Pokot</option>
+</select>
+
+<select id="constituency_list" name="constituency_list" onchange="chooseConstituency()"; style="position: absolute; top: 250px; left: 25px">
+</select>
+
+<div id="line_key" style="position: absolute; top: 485px; left: 500px;"></div>
+
+<div id="vis" style="position: absolute; top: 20px; left: 200px;"></div>
+
+<div id="map" style="position: absolute; top: 20px; left: 200px;"></div>
+
+<div id="tooltip"> </div>
+<div id="townnetworks" style="position: absolute; top: 400px; left: 25px;">
+<input type="checkbox" id="Towns" checked = "checked" onclick="showTowns()"/>Towns<br>
+<label>
+<input type="checkbox" id="Networks" checked = "checked" onclick="showNetworks()"/>Networks
+</label>
+</div>
+<script type="text/javascript">
+
+(function(){
+
+    var constOptions = {
+    "mombasa":['','Changamwe', 'Jomvu', 'Kisauni','Nyali','Likoni','Mvita'], 
+    "kwale":['','Msambweni', 'Lunga Lunga', 'Matunga','Kinango'],
+    "tana_river":['','Garsen','Galole','Bura'],
+    "lamu":['','Lamu East','Lamu West'],
+    "taita_taveta":['','taveta','wundanyi','mwatate','voi'],
+    "garissa":['','Garissa Township','Balambala','Lagdera','Dadaab','Fafi','Ijara'],
+    "wajir":['','Wajir North','Wajir East','Tarbaj','Wajir West','Eldas','Wajir South'],
+    "mandera":['','Mandera West','Banissa','Mandera North','Mandera South','Mandera East','Lafey'],
+    "marsabit":['','Moyale','North Horr','Saku','Laisamis'],
+    "isiolo":['','Isiolo North','Isiolo South'],
+    "meru":['','Igembe South','Igembe Central','Igembe North','Tigania West','Tigania East','North Imenti','Buuri','Central Imenti','South Imenti'],
+    "tharaka_nithi":['','Maara',"Chuka/Igambang'ombe","Tharaka"],
+    "embu":['','Manyatta','Runyenjes','Mbeere South','Mbeere North'],
+    "kitui":['','Mwingi North','Mwingi West','Mwingi Central','Kitui West','Kitui Rural','Kitui Central','Kitui East','Kitui South'],
+    "machakos":['','Masinga','Yatta','Kangundo','Matungulu','Kathiani','Mavoko','Machakos Town','Mwala'],
+    "makueni":['','Mbooni','Kilome','Kaiti','Makueni','Kibwezi West','Kibwezi East'],
+    "nyandarua":['','Kinangop','Kipipiri','Ol Kalou','Ol Joro Orok','Ndaragwa'],
+    "nyeri":['','Tetu','Kieni','Mathira','Othaya','Mukurweini','Nyeri Town'],
+    "kirinyaga":['','Mwea','Gichugu','Ndia','Kirinyaga Central'],
+    "muranga":['','Kangema','Mathioya','Kiharu','Kigumo','Maragwa','Kandara','Gatanga'],
+    "kiambu":['','Gatundu South','Gatundu North','Juja','Thika Town','Ruiru','Githunguri','Kiambu Town','Kiambaa','Kabete','Kikuyu','Limuru','Lari'],
+    "turkana":['','Turkana North','Turkana West','Turkana Central','Loima','Turkana South','Turkana East'],
+    "west_pokot":['','Kapenguria','Sigor','Kacheliba','Pokot South'],
+    "samburu":['','Samburu West','Samburu North','Samburu East'],
+    "trans_nzoia":['','Kwanza','Endebess','Saboti','Kiminini','Cherangany'],
+    "uasin_gishu":['','Soy','Turbo','Moiben','Ainabkoi','Kapseret','Kesses'],
+    "elgeyo_marakwet":['','Marakwet East','Marakwet West','Keiyo North','Keiyo South'],
+    "nandi":['','Tinderet','Aldai','Nandi Hills','Chesumei','Emgwen','Mosop'],
+    "baringo":['','Tiaty','Baringo North','Baringo Central','Baringo South','Mogotio','Eldama Ravine'],
+    "laikipia":['','Laikipia West','Laikipia East','Laikipia North'],
+    "nakuru":['','Molo','Njoro','Naivasha','Gilgil','Kuresoi South','Kuresoi North','Subukia','Rongai','Bahati','Nakuru Town East','Nakuru Town West'],
+    "narok":['','Kilgoris','Emuria Dikirr','Narok North','Narok East','Narok South','Narok West'],
+    "kajiado":['','Kajiado North','Kajiado Central','Kajiado East','Kajiado West','Kajiado South'],
+    "kericho":['','Kipkelion East',"Kipkelion West",'Ainamoi','Bureti','Belgut',"Sigowet/Soin"],
+    "bomet":['','Sotik','Chepalungu','Bomet East','Bomet Central','Konoin'],
+    "kakamega":['','Lugari','Likuyani','Malava','Lurambi','Navakholo','Mumias West','Mumias East','Matungu','Butere','Khwisero','Shinyalu','Ikolomani'],
+    "vihiga":['','Vihiga','Sabatia','Hamisi','Luanda','Emuhaya'],
+    "bungoma":['','Mt. Elgon','Sirisia','Kabuchai','Bumula','Kanduyi','Webuye East','Webuye West','Kimilili','Tongaren'],
+    "busia":['','Teso North','Teso South','Nambale','Matayos','Butula','Funyula','Budalangi'],
+    "siaya":['','Ugenya','Ugunja','Alego Usonga','Gem','Bondo','Rarieda'],
+    "kisumu":['','Kisumu East','Kisumu West','Kisumu Central','Seme','Nyando','Muhoroni','Nyakach'],
+    "homa_bay":['','Kasipul','Kabondo Kasipul','Karachuonyo','Rangwe','Homa Bay Town','Ndhiwa','Mbita','Suba'],
+    "migori":['','Rongo','Awendo','Suna East','Suna West','Uriri','Nayatike','Kuria West','Kuria East'],
+    "kisii":['','Bonchari','South Mugirango','Bomachoge Borabu','Bobasi','Bomachoge Chache','Nyaribari Masaba','Nyaribari Chache','Kitutu Chache North','Kitutu Chache South'],
+    "nyamira":['','Kitutu Masaba','West Mugirango','North Mugirango','Borabu'],
+    "nairobi":['','Westlands','Dagoretti North','Dagoretti South','Langata','Kibra','RoySambu','Kasarani','Ruaraka','Embakasi South','Embakasi North','Embakasi Central','Embakasi East','Embakasi West','Makadara','Kamukunji','Starehe','Mathare'],
+    "kilifi":['','Kilifi North', 'Kilifi South', 'Kaloleni','Rabai','Ganze','Malindi','Magarini']};
+
+    var county_list = document.getElementById('county_list');
+    var constituency_list = document.getElementById('constituency_list');
+    var wards_list = document.getElementById('wards_list');
+
+    county_list.onchange = function(){
+        constituency_list.length = 0;
+        var _val = this.options[this.selectedIndex].value;
+        for ( var i in constOptions[_val]){
+            var op = document.createElement('option');
+            op.value = constOptions[_val][i];
+            op.text = constOptions[_val][i];
+            constituency_list.appendChild(op);
+        }
+    };
+    county_list.onchange();
+})();
+
+
+
+var width  = 1200;
+var height = 900;
+
+var vis = d3.select("#vis")
+  		.append("svg")
+    	.attr("width", width)
+    	.attr("height", height)
+
+var map = d3.select("#map")
+		.append("svg")
+		.attr("width",width)
+		.attr("height",height)
+
+var colorRange  = ["red","orange","yellow","lightgreen","#008000"];
+var colorDomain = [0,20,40,60,80,100];
+var color  = d3.scale.linear().domain(colorDomain).range(colorRange);
+
+var colorRange2 = ["green","orange","red"];
+var colorDomain2 = ["Complete","Ongoing","On hold"];
+var color2 = d3.scale.linear().domain(colorDomain2).range(colorRange2);
+
+var scale0      = 4000;
+
+var projection  = d3.geo.mercator()
+					.scale(scale0)
+					.center([38,1])
+					.translate([width/2, height/2]);
+
+var path        = d3.geo.path()
+                     .projection(projection);
+
+var div = d3.select("#map")
+            .append("svg")   
+            .attr("class", "tooltip")               
+            .style("opacity", 0);
+
+d3.select("#county_list").style("opacity",0);
+d3.select("#constituency_list").style("opacity",0);
+d3.select("#vis").style("opacity",0);
+d3.select("#map").style("opacity",0);
+d3.select("#townnetworks").style("opacity",0);
+
+chooseConstituency();
+
+function selectDLP(){
+	document.getElementById("NOFBI").checked = false;
+	d3.select("#county_list").style("opacity",1);
+	d3.select("#constituency_list").style("opacity",1);
+	d3.select("#vis").style("opacity",1);
+	d3.select("#map").style("opacity",0);
+    d3.select("#townnetworks").style("opacity",0);
+	d3.json("constituencies.json", function(json) {
+      vis.selectAll("path")
+      .data(json.features)
+      .enter()
+      .append("path")
+        .attr("d", path)
+        .style("fill", "white")
+        .style("stroke-width", "1")
+        .style("stroke", "black")
+        
+        .attr("fill",function(d){
+        	//d3.select("#AINAMOI").style("fill","red");
+        });
+        d3.csv("dummy_data.csv", function(csv) {
+            vis.selectAll("circle")
+                .data(csv)
+                .enter()
+                .append("circle")
+                .attr("cx", function (d) {
+                     return projection([d.Lon, d.Lat])[0];
+                 })
+                .attr("cy", function (d) {
+                     return projection([d.Lon, d.Lat])[1];
+                 })
+                .attr("r", "1px")
+                .attr("class","point") 
+                .style("opacity", 0.5)                
+                .style("fill", function(d){		  
+		        	dev_exp=d["Devices Expected"];
+			    	dev_del=d["Devices Delivered"];				
+					percentage = (parseInt(dev_del) / parseInt(dev_exp)) * 100;	
+					return color(percentage);
+				});					
+        })
+
+    });
+
+}
+function selectNOFBI(){
+
+	document.getElementById("DLP").checked = false;
+	d3.select("#county_list").style("opacity",0);
+	d3.select("#constituency_list").style("opacity",0);
+	d3.select("#vis").style("opacity",0);
+	d3.select("#map").style("opacity",1);
+    d3.select("#townnetworks").style("opacity",1);
+
+    d3.json("kenya/admin_level_2.geojson", function(json) {
+
+      map.selectAll("path")
+      .data(json.features)
+      .enter()
+      .append("path")
+        .attr("d", path)
+        .style("fill", "transparent")
+        .style("stroke-width", "1")
+        .style("stroke", "lightgrey")
+
+           
+        d3.json("data/Roads.json", function(json){
+            
+            map.selectAll("path")
+            .data(json.features)
+            .enter()
+            .append("path")
+            .attr("d",path)
+            .attr("class","road")
+            .attr("id",function(d){
+                return d.properties.NOFBI;
+            })
+            .style("fill",'transparent')
+            .style("stroke","blue")
+            .on("mouseover", function(d) { 
+                    current_position = d3.mouse(this); 
+                    map.append("text").text(
+                                            "\nNetwork:   "+d.properties.NOFBI)
+                        .attr('x', current_position[0])
+                        .attr('y', current_position[1])
+                        .attr('id', 'tooltip')
+                        .attr("fill","green")
+                        .attr("font-size","20px")
+                        .style("stroke", "#000")
+                        .style("pointer-events", "none");     
+                                                                  
+            }) 
+            .on("mouseout", function(d) {  
+                    d3.select("text").remove("text");    
+                      
+            });
+    d3.selectAll(".road")
+      .attr("fill",function(d){
+        
+         d3.selectAll("#"+"Huawei")
+           .style("stroke","red");
+
+            d3.selectAll("#"+"TLK")
+           .style("stroke","green");
+
+           d3.selectAll("#")
+
+          if(this.id===""){d3.select(this).remove();}
+        
+      });
+         });
+        
+        d3.csv("Towns_Custom.csv", function(csv) {
+            map.selectAll("circle")
+                .data(csv)
+                .enter()
+                .append("circle")
+                .attr("cx", function (d) {
+
+
+                     if(d.NOFBI_Stru != ""){
+                       return projection([d.POINT_X, d.POINT_Y])[0]; 
+
+                     }
+
+                 })
+                .attr("cy", function (d) {
+                    if(d.NOFBI_Stru != ""){
+                     return projection([d.POINT_X, d.POINT_Y])[1];
+                    }
+             
+                 })
+                .attr("r", "3px")
+                .attr("class","point") 
+                .style("opacity", 0.5)                
+                .style("fill","brown")
+                
+                .on("mouseover", function(d) { 
+                   current_position = d3.mouse(this); 
+                    map.append("text").text(d["TOWN"]+
+                                            "\nStatus:   "+d["NOFBI_Stru"])
+                        .attr('x', current_position[0])
+                        .attr('y', current_position[1])
+                        .attr('id', 'tooltip')
+                        .attr("fill","green")
+                        .attr("font-size","20px")
+                        .style("stroke", "#000")
+                        .style("pointer-events", "none");  
+                })    
+                .on("mouseout", function(d) {  
+                    d3.select("text").remove("text");    
+                });
+                  
+            })
+
+    
+    //drawlines();
+    function drawlines(){
+        d3.csv("Towns_Custom.csv", function(data){
+            for(d = 0; d < data.length; d++){
+                var x = projection([data[d].POINT_X,data[d].POINT_Y])[0];
+                var y = projection([data[d].POINT_X,data[d].POINT_Y])[1];
+                if (d+1 < data.length){
+                    var x2 = projection([data[d+1].POINT_X,data[d+1].POINT_Y])[0];
+                    var y2 = projection([data[d+1].POINT_X,data[d+1].POINT_Y])[1];
+                    var path = "M"+x+","+y+"L"+x2+","+y2;
+                    var line = map.append('path')
+                        .attr('d',path)
+                        .attr('stroke-width',0.5)
+                        .attr("stroke",'red');
+                }
+            }
+        })
+    }
+
+  
+
+    });
+
+}	
+
+	
+function chooseConstituency(){
+
+}
+console.log();
+
+
+</script>
+</body>
+</html>
