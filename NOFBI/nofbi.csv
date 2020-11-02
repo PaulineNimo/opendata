@@ -1,0 +1,25 @@
+ITEM,SITE A,Lat1,Long1,SITE B,Lat2,Long2,Status
+1,Chania River,-1.051618,37.143811,Thika,-1.038362,37.082326,Complete
+2,Embu,-0.539051,37.459037,Meru,0.051541,37.645511,Complete
+3,Meru,0.051541,37.645511,Maganya,0.519941,37.93423,Complete
+4,Machakos,-1.51791,37.264501,Wote,-1.788678,37.633152,Complete
+5,Wote,-1.788678,37.633152,Kitui,-1.375004,37.994531,Complete
+6,Voi,-3.397203,38.555746,Wundanyi,-3.39836,38.36267,Complete
+7,Nairobi Ardhi House,-1.292659,36.811641,Ruaraka-Government Data Centre,-1.245601,36.88117,Complete
+8,Nyahururu,0.035577,36.362771,OlKalou,-0.272683,36.377406,Complete
+9,Nyahururu,0.035577,36.362771,Rumuruti,0.26708,36.537866,Complete
+10,Eldoret,0.514159,35.271612,Iten,0.67088,35.506911,Complete
+11,Iten,0.67088,35.506911,Kabarnet,0.490106,35.742883,Complete
+12,Eldoret,0.514159,35.271612,Kapsabet,0.202921,35.097653,Complete
+13,Kapsabet,0.202921,35.097653,Muhoroni,-0.15622,35.197148,Complete
+14,Kisumu,-0.091452,34.766994,Siaya,0.062664,34.287714,Complete
+15,Kisii,-0.677284,34.779521,Homa Bay,-0.534975,34.452888,Complete
+16,Kisii,-0.677284,34.779522,Nyamira,-0.566935,34.933208,Complete
+17,Kutus (Joint),-0.573425,37.325106,Kerugoya,-0.4994,37.278242,Complete
+18,Buchuma Gate,-3.669594,38.942285,Pipeline Joint,-4.014988,39.613886,Complete
+19,Diani,-4.287688,39.584995,LungaLunga (Across to Tanzania),-4.553666,39.129052,Ongoing
+20,Machakos,-1.51791,37.264501,Konza City,-1.777611,37.10937,Ongoing
+21,Madogo,-0.47245,39.602741,Hola-Garissa Road Junction,-0.491182,39.529238,Complete
+22,Moyale,3.521088,39.055152,War Gedud,3.186582,40.867692,Ongoing
+23,Rumuruti,0.26708,36.537866,Maralal,1.093052,36.701604,Ongoing
+24,Kitale,1.01983,35.001013,Webuye,0.599345,34.778723,On hold

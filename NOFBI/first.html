@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Government Projects</title>
+	<script type="text/javascript" src="d3.min.js"></script>
+	<script type="text/javascript" src="topojson.v1.min.js"></script>
+	
+	<script type="text/javascript" src="d3.v3.min.js"></script>
+</head>
+
+<body>
+
+<h3>All Projects</h3>
+
+
+
+
+<div id="line_key" style="position: absolute; top: 485px; left: 500px;"></div>
+
+<div id="map1" style="position: absolute; top: 25px; left: 350px;"/>
+
+<div id="vis" style="position: absolute; top: 20px; left: 250px;"></div>
+
+<div id="map" style="position: absolute; top: 20px; left: 250px;"></div>
+
+<script type="text/javascript">
+var width  = 1200;
+var height = 900;
+
+var vis = d3.select("#vis")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+
+var map = d3.select("#map")
+    .append("svg")
+    .attr("width",width)
+    .attr("height",height)
+
+var colorRange  = ["red","orange","yellow","lightgreen","#008000"];
+var colorDomain = [0,20,40,60,80,100];
+var color  = d3.scale.linear().domain(colorDomain).range(colorRange);
+
+var colorRange2 = ["green","orange","red"];
+var colorDomain2 = ["Complete","Ongoing","On hold"];
+var color2 = d3.scale.linear().domain(colorDomain2).range(colorRange2);
+
+var scale0      = 4000;
+
+var projection  = d3.geo.mercator()
+          .scale(scale0)
+          .center([38,1])
+          .translate([width/2, height/2]);
+
+var path        = d3.geo.path()
+                     .projection(projection);
+
+
+selectNOFBI();
+function selectNOFBI(){
+      d3.json("kenya_counties_data.geojson", function(json1) { 
+      map.selectAll("path")
+      .data(json1.features)
+      .enter()
+      .append("path")
+        .attr("d", path)
+        .style("fill", "red")
+        .style("stroke-width", "1")
+        .style("stroke", "lightgrey");   
+
+    });  
+          
+        d3.json("data/Roads.json", function(json){
+            map.selectAll("path")
+            .data(json.features)
+            .enter()
+            .append("path")
+            .attr("d",path)
+            .attr("class","road")
+            .attr("id",function(d){
+                return d.properties.NOFBI;
+            })
+            .style("fill",'transparent')
+            .style("stroke","blue")
+            
+        d3.selectAll(".road")
+          .attr("fill",function(d){
+        
+         d3.selectAll("#"+"Huawei")
+           .style("stroke","red");
+
+          d3.selectAll("#"+"TLK")
+           .style("stroke","green");
+
+          if(this.id===""){d3.select(this).remove();}
+        
+      });
+      
+         });
+
+    d3.csv("Towns_Custom.csv", function(csv) {
+            map.selectAll("circle")
+                .data(csv)
+                .enter()
+                .append("circle")
+                .attr("cx", function (d) {
+
+
+                     if(d.NOFBI_Stru != ""){
+                       return projection([d.POINT_X, d.POINT_Y])[0]; 
+
+                     }
+
+                 })
+                .attr("cy", function (d) {
+                    if(d.NOFBI_Stru != ""){
+                     return projection([d.POINT_X, d.POINT_Y])[1];
+                    }
+             
+                 })
+                .attr("r", "3px")
+                .attr("class","point") 
+                .style("opacity", 0.5)                
+                .style("fill","brown")
+                
+                .on("mouseover", function(d) { 
+                   current_position = d3.mouse(this); 
+                    map.append("text").text(d["TOWN"]+
+                                            "\nStatus:   "+d["NOFBI_Stru"])
+                        .attr('x', current_position[0])
+                        .attr('y', current_position[1])
+                        .attr('id', 'tooltip')
+                        .attr("fill","green")
+                        .attr("font-size","20px")
+                        .style("stroke", "#000")
+                        .style("pointer-events", "none");  
+                })    
+                .on("mouseout", function(d) {  
+                    d3.select("text").remove("text");    
+                });
+                  
+            })        
+      
+
+
+} 
+
+</script>
+</body>
+</html>
+
+d3.json("data/Roads.json", function(json){
+
+            map.selectAll("path")
+            .data(json.features)
+            .enter()
+            .append("path")
+            .attr("d",path)
+            .attr("class","road")
+
+            .attr("id",function(d){
+                return d.properties.NOFBI;
+            })
+            .style("fill",'transparent')
+            .style("stroke","blue")
+            
+    d3.selectAll(".road")
+      .attr("fill",function(d){
+        
+         d3.selectAll("#"+"Huawei")
+           .style("stroke","yellow");
+
+            d3.selectAll("#"+"TLK")
+           .style("stroke","green");
+
+           if(this.id.match(/Sagem/)){d3.select(this).style("stroke","orange");} 
+           if(this.id.match(/Proposed/)){d3.select(this).style("stroke","magenta");} 
+           if(this.id.match(/ZTE/)){d3.select(this).style("stroke","red");} 
+           if(this.id.match(/NOFBI II/)){d3.select(this).style("stroke","black");}
+           if(this.id.match(/Wireless/)){d3.select(this).style("stroke","lightblue");}
+           if(this.id===""){d3.select(this).remove();}
+         });
+         });

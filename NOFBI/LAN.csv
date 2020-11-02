@@ -1,0 +1,184 @@
+County,Town,Lan Site Name,Longitude_DMS,Latitude_DMS,Longitude_DD,Latitude_DD
+Baringo ,Kabarnet,TKL,"  0°29'35.37""N"," 35°44'39.36""E",0.4932,35.74426667
+Baringo ,Kabarnet,County Commissioner,"  0°29'29.36""N"," 35°44'40.64""E",0.4915,35.74462222
+Baringo ,Kabarnet,KNA,"  0°29'32.22""N"," 35°44'39.96""E",0.4923,35.74443333
+Baringo ,Kabarnet,Governor,"  0°29'28.30""N"," 35°44'37.87""E",0.4912,35.74385278
+Busia ,Busia ,TKL,"  0°27'39.21""N"," 34° 6'27.20""E",0.4609,34.10755556
+Busia ,Busia ,county commissioner ,"  0°27'48.38""N"," 34° 6'21.39""E",0.4634,34.10594167
+Busia ,Busia ,KNA,"  0°27'55.99""N"," 34° 6'5.04""E",0.4656,34.1014
+Busia ,Busia ,Education ,"  0°27'49.70""N"," 34° 6'22.28""E",0.4638,34.10618889
+Elgeyo Marakwet,Iten,TKL,"  0°39'33.05""N"," 35°30'15.28""E",0.6592,35.50424444
+Elgeyo Marakwet,Iten,County Commissioner,"  0°40'18.00""N"," 35°30'32.46""E",0.6717,35.50901667
+Elgeyo Marakwet,Iten,Hospital,"  0°40'33.14""N"," 35°30'23.98""E",0.6759,35.50666111
+Elgeyo Marakwet,Iten,public Works,"  0°39'39.62""N"," 35°29'56.78""E",0.6610,35.49910556
+Embu,Embu,TKL,"  0°32'4.51""S"," 37°27'1.09""E",-0.5346,37.45030278
+Embu,Embu,county commissioner ,"  0°31'43.07""S ","37°27'9.15""E",-0.5286,37.45254167
+Embu,Embu,KNA,"  0°31'55.32""S"," 37°26'59.68""E",-0.5320,37.44991111
+Embu,Embu,Main Prison,"  0°33'5.12""S"," 37°27'59.06""E",-0.5514,37.46640556
+Garissa,Garissa,TKL,"  0°27'14.47""S"," 39°38'34.33""E",-0.4540,39.64286944
+Garissa,Garissa,County commissioner ,"  0°27'34.29""S"," 39°38'18.43""E",-0.4595,39.63845278
+Garissa,Garissa,Police station,"  0°27'33.15""S"," 39°38'16.20""E",-0.4592,39.63783333
+Garissa,Garissa,county Assembly ,"  0°27'14.91""S"," 39°38'30.70""E",-0.4541,39.64186111
+Kilifi,Kilifi,TKL,"  3°38'1.68""S"," 39°51'5.93""E",-3.6338,39.85164722
+Kilifi,Kilifi,National treasury,"  3°38'1.52""S"," 39°51'21.88""E",-3.6338,39.85607778
+Kilifi,Kilifi,KNA,"  3°38'2.36""S"," 39°51'25.33""E",-3.6340,39.85703611
+Kilifi,Kilifi,Police HQ,"  3°37'59.14""S"," 39°51'15.13""E",-3.6331,39.85420278
+Kisii,Kisii,TKL,"  0°40'38.25""S"," 34°46'19.90""E",-0.6773,34.77219444
+Kisii,Kisii,county commissioner,"  0°40'43.74""S"," 34°46'18.72""E",-0.6788,34.77186667
+Kisii,Kisii,KNA,"  0°40'37.11""S"," 34°46'15.62""E",-0.6770,34.77100556
+Kisii,Kisii,Lands,"  0°40'44.07""S"," 34°46'21.40""E",-0.6789,34.77261111
+Lamu,Lamu,TKL,"  2°16'35.82""S"," 40°54'16.72""E",-2.2766,40.90464444
+Lamu,Lamu,KPA,"  2°16'9.57""S"," 40°54'10.10""E",-2.2693,40.90280556
+Lamu,Lamu,county commissioner,"  2°16'9.09""S"," 40°54'9.72""E",-2.2692,40.9027
+Lamu,Lamu,Lamu district hospital,"  2°16'43.20""S"," 40°54'23.15""E",-2.2787,40.90643056
+Meru,Meru,TKL,"  0° 2'52.89""N"," 37°39'3.28""E",0.0480,37.65091111
+Meru,Meru,County commissioner ,"  0° 2'52.85""N"," 37°38'57.32""E",0.0480,37.64925556
+Meru,Meru,Police ,"  0° 3'0.32""N"," 37°38'46.42""E",0.0501,37.64622778
+Meru,Meru,Mens Prison,"  0° 3'10.96""N"," 37°38'43.87""E",0.0530,37.64551944
+Mombasa,Mombasa,TKL,"  4° 3'46.74""S"," 39°40'13.33""E",-4.0630,39.67036944
+Mombasa,Mombasa,County commissioner ,"  4° 3'54.94""S"," 39°40'46.11""E",-4.0653,39.679475
+Mombasa,Mombasa,Bima House,"  4° 3'42.06""S"," 39°40'18.99""E",-4.0617,39.67194167
+Mombasa,Mombasa,KNA/KBC,"  4° 3'45.77""S"," 39°40'8.39""E",-4.0627,39.66899722
+Nandi,Kabsabet,TKL,"  0°11'59.56""N"," 35° 5'48.25""E",0.1999,35.09673611
+Nandi,Kabsabet,county Commissioner,"  0°12'10.73""N"," 35° 6'24.70""E",0.2030,35.10686111
+Nandi,Kabsabet,Hospital,"  0°12'8.22""N"," 35° 6'11.65""E",0.2023,35.10323611
+Nandi,Kabsabet,Police,"  0°12'11.32""N"," 35° 6'8.81""E",0.2031,35.10244722
+Narok ,Narok ,TKL,"  1° 5'9.05""S"," 35°51'59.53""E",-1.0858,35.86653611
+Narok ,Narok ,County Commissioner,"  1° 5'12.83""S"," 35°51'58.87""E",-1.0869,35.86635278
+Narok ,Narok ,KNA,"  1° 5'14.46""S"," 35°52'1.78""E",-1.0874,35.86716111
+Narok ,Narok ,Hospital,"  1° 5'4.72""S"," 35°52'2.19""E",-1.0846,35.867275
+Nyamira,Nyamira,SFC,"  0°33'25.52""S"," 34°55'39.22""E",-0.5571,34.92756111
+Nyamira,Nyamira,County Commissioner ,"  0°33'33.47""S"," 34°55'59.80""E",-0.5593,34.93327778
+Nyamira,Nyamira,Assembly,"  0°33'30.28""S"," 34°55'48.77""E",-0.5584,34.93021389
+Nyamira,Nyamira,KNA & M.O.I.C.T,"  0°33'34.39""S"," 34°55'58.39""E",-0.5596,34.93288611
+Tana River,Hola,TKL,"  1°29'45.11""S"," 40° 1'37.82""E",-1.4959,40.02717222
+Tana River,Hola,County Commissioner ,"  1°30'6.63""S"," 40° 0'57.74""E",-1.5018,40.01603889
+Tana River,Hola,KNA,"  1°29'45.71""S"," 40° 1'50.92""E",-1.4960,40.03081111
+Tana River,Hola,Prison,"  1°29'55.65""S"," 40° 2'4.55""E",-1.4988,40.03459722
+Tharaka Nithi,Chuka,TKL,"  0°19'59.50""S"," 37°38'45.13""E",-0.3332,37.64586944
+Tharaka Nithi,Chuka,County Commissioner ,"  0°19'57.91""S"," 37°38'43.55""E",-0.3328,37.64543056
+Tharaka Nithi,Chuka,County Commander,"  0°19'53.98""S"," 37°38'58.31""E",-0.3317,37.64953056
+Tharaka Nithi,Chuka, Education/KNA,"  0°19'53.30""S"," 37°38'47.09""E",-0.3315,37.64641389
+Uasin Gishu ,Eldoret,TKL,"  0°30'59.77""N"," 35°16'31.20""E",0.5166,35.27533333
+Uasin Gishu ,Eldoret,county commissioner,"  0°31'32.13""N"," 35°16'36.27""E",0.5256,35.27674167
+Uasin Gishu ,Eldoret,KNA,"  0°31'27.47""N"," 35°16'39.61""E",0.5243,35.27766944
+Uasin Gishu ,Eldoret,public Works(Kapsoya ),"  0°30'49.58""N"," 35°18'2.72""E",0.5138,35.30075556
+Wajir ,Wajir ,TKL,"  1°44'53.91""N"," 40° 3'31.67""E",1.7483,40.05879722
+Wajir ,Wajir ,county commissioner,"  1°45'4.38""N"," 40° 3'25.09""E",1.7512,40.05696944
+Wajir ,Wajir ,KNA/Planning,"  1°45'7.69""N"," 40° 3'25.85""E",1.7521,40.05718056
+Wajir ,Wajir ,Afya house,"  1°44'48.49""N"," 40° 3'43.22""E",1.7468,40.06200556
+Bomet,Bomet,TKL,"  0°46'55.53""S"," 35°20'29.11""E",-0.7821,35.34141944
+Bomet,Bomet,county commissioner,"  0°47'4.59""S"," 35°20'14.06""E",-0.7846,35.33723889
+Bomet,Bomet, Kerra,"  0°47'8.10""S"," 35°20'39.05""E",-0.7856,35.34418056
+Bomet,Bomet,county Assembly ,"  0°46'56.24""S"," 35°20'37.19""E",-0.7823,35.34366389
+Bungoma,Bungoma,TKL,"  0°34'0.74""N"," 34°33'35.98""E",0.5669,34.55999444
+Bungoma,Bungoma,county commissioner,"  0°34'21.02""N"," 34°33'33.97""E",0.5725,34.55943611
+Bungoma,Bungoma,KNA,"  0°34'22.82""N"," 34°33'32.38""E",0.5730,34.55899444
+Bungoma,Bungoma,Police,"  0°34'24.34""N"," 34°33'34.02""E",0.5734,34.55945
+Homa Bay,Homa Bay,SFC,"  0°31'48.18""S"," 34°27'31.29""E",-0.5301,34.45869167
+Homa Bay,Homa Bay,county commissioner,"  0°31'39.66""S"," 34°27'34.09""E",-0.5277,34.45946944
+Homa Bay,Homa Bay,Ministry of Land ,"  0°31'24.68""S"," 34°27'31.78""E",-0.5235,34.45882778
+Homa Bay,Homa Bay,Prison,"  0°31'52.95""S"," 34°27'57.34""E",-0.5314,34.46592778
+Isiolo,Isiolo,TKL,"  0°21'19.78""N"," 37°35'9.75""E",0.3555,37.58604167
+Isiolo,Isiolo,county commissioner,"  0°21'14.73""N"," 37°35'10.45""E",0.3541,37.58623611
+Isiolo,Isiolo,Hospital,"  0°21'53.40""N"," 37°35'21.54""E",0.3648,37.58931667
+Isiolo,Isiolo,KNA,"  0°21'17.98""N"," 37°35'8.96""E",0.3550,37.58582222
+Kajiado,Kajiado,TKL,"  1°50'27.97""S"," 36°47'28.61""E",-1.8411,36.79128056
+Kajiado,Kajiado,county commissioner,"  1°51'1.39""S"," 36°46'22.24""E",-1.8504,36.77284444
+Kajiado,Kajiado,Probation,"  1°50'57.14""S"," 36°46'23.60""E",-1.8492,36.77322222
+Kajiado,Kajiado,Prison,"  1°51'8.92""S"," 36°46'16.00""E",-1.8525,36.77111111
+Kakamega,Kakamega,TKL,"  0°16'45.71""N"," 34°45'11.19""E",0.2794,34.75310833
+Kakamega,Kakamega,county commissioner,"  0°16'36.57""N"," 34°45'26.48""E",0.2768,34.75735556
+Kakamega,Kakamega,Governor,"  0°16'57.57""N"," 34°45'13.11""E",0.2827,34.75364167
+Kakamega,Kakamega,KNA,"  0°16'40.88""N"," 34°45'26.03""E",0.2780,34.75723056
+Kericho,Kericho,TKL,"  0°22'15.16""S"," 35°16'57.06""E",-0.3709,35.28251667
+Kericho,Kericho,county commissioner,"  0°22'10.43""S"," 35°17'6.44""E",-0.3696,35.28512222
+Kericho,Kericho,Governor,"  0°22'16.80""S"," 35°16'58.93""E",-0.3713,35.28303611
+Kericho,Kericho,KNA,"  0°22'6.86""S"," 35°17'6.17""E",-0.3686,35.28504722
+Kiambu,Kiambu,TKL,"  1°10'22.14""S"," 36°49'53.32""E",-1.1728,36.83147778
+Kiambu,Kiambu,county commissioner,"  1°10'21.98""S"," 36°49'59.44""E",-1.1728,36.83317778
+Kiambu,Kiambu,KNA,"  1°10'21.83""S"," 36°49'52.51""E",-1.1727,36.83125278
+Kiambu,Kiambu,Governor,"  1°10'0.71""S"," 36°49'26.89""E",-1.1669,36.82413611
+Kirinyaga,Kerugoya,TKL,"  0°29'53.67""S"," 37°16'47.08""E",-0.4982,37.27974444
+Kirinyaga,Kerugoya,county commissioner,"  0°29'49.57""S"," 37°16'57.94""E",-0.4971,37.28276111
+Kirinyaga,Kerugoya,Assembly,"  0°29'45.52""S"," 37°16'58.57""E",-0.4960,37.28293611
+Kirinyaga,Kerugoya,Hospital,"  0°30'16.07""S"," 37°16'54.35""E",-0.5045,37.28176389
+Kisumu,Kisumu,TKL,"  0° 6'12.64""S"," 34°45'11.47""E",-0.1035,34.75318611
+Kisumu,Kisumu,Governor 1,"  0° 6'33.17""S"," 34°45'1.45""E",-0.1092,34.75040278
+Kisumu,Kisumu,KURA,"  0° 4'52.14""S"," 34°44'33.51""E",-0.0812,34.74264167
+Kisumu,Kisumu,Kisumu general hospital,"  0° 5'23.52""S"," 34°46'18.53""E",-0.0899,34.77181389
+Kitui,Kitui,TKL,"  1°22'2.36""S"," 38° 0'43.93""E",-1.3673,38.01220278
+Kitui,Kitui,county commissioner,"  1°21'55.13""S"," 38° 0'55.73""E",-1.3653,38.01548056
+Kitui,Kitui,Education ,"  1°21'58.21""S"," 38° 0'54.49""E",-1.3662,38.01513611
+Kitui,Kitui,Ardhi house,"  1°21'52.82""S"," 38° 0'50.78""E",-1.3647,38.01410556
+Kwale,Kwale,TKL,"  4°10'46.76""S"," 39°27'24.98""E",-4.1797,39.45693889
+Kwale,Kwale,county commissioner,"  4°10'49.43""S"," 39°27'22.01""E",-4.1804,39.45611389
+Kwale,Kwale,National Registration Bureau ,"  4°10'54.22""S"," 39°27'25.37""E",-4.1817,39.45704722
+Kwale,Kwale,KNA,"  4°10'44.05""S"," 39°27'20.09""E",-4.1789,39.45558056
+Machakos,Machakos,TKL,"  1°31'4.98""S"," 37°16'2.37""E",-1.5181,37.267325
+Machakos,Machakos,county commissioner,"  1°30'51.70""S"," 37°16'7.84""E",-1.5144,37.26884444
+Machakos,Machakos,Governor,"  1°31'11.78""S"," 37°15'1.26""E",-1.5199,37.25035
+Machakos,Machakos,KNA,"  1°30'58.79""S"," 37°16'2.50""E",-1.5163,37.26736111
+Makueni,Wote,TKL,"  1°47'6.88""S"," 37°37'43.70""E",-1.7852,37.62880556
+Makueni,Wote,county commissioner,"  1°47'21.11""S"," 37°37'17.27""E",-1.7892,37.62146389
+Makueni,Wote,Governor,"  1°47'17.21""S"," 37°37'19.20""E",-1.7881,37.622
+Makueni,Wote,Huduma,"  1°47'22.91""S"," 37°37'19.34""E",-1.7897,37.62203889
+Muranga,Muranga,TKL,"  0°43'3.73""S"," 37° 9'32.71""E",-0.7177,37.15908611
+Muranga,Muranga,county commissioner,"  0°43'2.58""S"," 37° 9'29.68""E",-0.7174,37.15824444
+Muranga,Muranga,KNA,"  0°43'4.03""S"," 37° 9'26.41""E",-0.7178,37.15733611
+Muranga,Muranga,Ardhi house,"  0°43'7.99""S"," 37° 9'24.36""E",-0.7189,37.15676667
+Nakuru,Nakuru,TKL,"  0°17'9.81""S"," 36° 4'13.85""E",-0.2861,36.07051389
+Nakuru,Nakuru,county commissioner,"  0°17'13.09""S"," 36° 4'8.86""E",-0.2870,36.06912778
+Nakuru,Nakuru,Regional & county police,"  0°17'19.66""S"," 36° 4'9.77""E",-0.2888,36.06938056
+Nakuru,Nakuru,Kenya police divisional police,"  0°17'18.22""S"," 36° 4'12.56""E",-0.2884,36.07015556
+Migori,Migori,TKL,"  1° 3'50.58""S"," 34°28'28.01""E",-1.0641,34.47444722
+Migori,Migori,county commissioner,"  1° 4'9.02""S"," 34°28'47.83""E",-1.0692,34.47995278
+Migori,Migori,KNA,"  1° 4'6.05""S"," 34°28'43.83""E",-1.0683,34.47884167
+Nyeri,Nyeri,TKL,"  0°25'16.97""S"," 36°56'55.32""E",-0.4214,36.9487
+Nyeri,Nyeri,county commissioner,"  0°25'16.54""S"," 36°56'48.43""E",-0.4213,36.94678611
+Nyeri,Nyeri,Deputy Commissioner,"  0°25'14.90""S"," 36°56'50.58""E",-0.4208,36.94738333
+Nyeri,Nyeri,KENHA,"  0°24'57.38""S"," 36°56'57.35""E",-0.4159,36.94926389
+Samburu,Maralal,SFC,"  1° 5'47.63""N"," 36°41'52.23""E",1.0966,36.69784167
+Samburu,Maralal,County commissioner,"  1° 5'33.07""N"," 36°41'35.69""E",1.0925,36.69324722
+Samburu,Maralal,county Treasury,"  1° 5'37.84""N"," 36°41'40.34""E",1.0938,36.69453889
+Samburu,Maralal,Public works,"  1° 5'25.32""N"," 36°41'32.84""E",1.0904,36.69245556
+Siaya,Siaya,TKL,"  0° 3'37.82""N"," 34°17'9.59""E",0.0605,34.28599722
+Siaya,Siaya,County commissioner,"  0° 3'30.52""N"," 34°17'17.10""E",0.0585,34.28808333
+Siaya,Siaya,Governor,"  0° 3'27.39""N"," 34°17'15.83""E",0.0576,34.28773056
+Siaya,Siaya,KERRA,"  0° 3'28.16""N"," 34°16'57.03""E",0.0578,34.28250833
+Taita Taveta,Wundanyi,Deputy County commissioner,"  3°24'5.09""S"," 38°21'30.36""E",-3.4014,38.35843333
+Taita Taveta,Wundanyi,KNA,"  3°24'13.11""S"," 38°21'42.52""E",-3.4036,38.36181111
+Taita Taveta,Wundanyi,Prison,"  3°24'18.80""S"," 38°21'41.77""E",-3.4052,38.36160278
+Trans Nzoia,Kitale,TKL,"  1° 0'53.47""N"," 35° 0'16.01""E",1.0149,35.00444722
+Trans Nzoia,Kitale,County commissioner,"  1° 0'45.78""N"," 35° 0'0.83""E",1.0127,35.00023056
+Trans Nzoia,Kitale,Governor,"  1° 0'53.43""N"," 35° 0'5.94""E",1.0148,35.00165
+Trans Nzoia,Kitale,Assembly,"  1° 0'49.36""N"," 35° 0'2.91""E",1.0137,35.00080833
+West Pokot,Kapenguria,TKL,"  1°15'1.44""N"," 35° 6'45.24""E",1.2504,35.11256667
+West Pokot,Kapenguria,County commissioner,"  1°14'25.49""N"," 35° 7'7.27""E",1.2404,35.11868611
+West Pokot,Kapenguria,Assembly,"  1°14'24.09""N"," 35° 7'12.44""E",1.2400,35.12012222
+West Pokot,Kapenguria,County ICT,"  1°14'35.74""N"," 35° 7'0.66""E",1.2433,35.11685
+Vihiga,Vihiga,TKL/SFC,"  0° 4'54.26""N"," 34°43'20.85""E",0.0817,34.72245833
+Vihiga,Vihiga,County commissioner,"  0° 4'46.00""N"," 34°43'27.19""E",0.0794,34.72421944
+Vihiga,Vihiga,Governor,"  0° 4'48.62""N"," 34°43'25.70""E",0.0802,34.72380556
+Vihiga,Vihiga,Water,"  0° 4'47.94""N"," 34°43'23.17""E",0.0800,34.72310278
+Laikipia,Rumuruti,SFC,"  0°15'43.11""N"," 36°32'14.12""E",0.2620,36.53725556
+Laikipia,Rumuruti,Deputy Commissioner,"  0°15'44.75""N"," 36°32'21.78""E",0.2624,36.53938333
+Laikipia,Rumuruti,Veterinary ,"  0°15'47.22""N"," 36°32'22.49""E",0.2631,36.53958056
+Laikipia,Rumuruti,Hospital,"  0°16'17.49""N"," 36°31'59.81""E",0.2715,36.53328056
+Turkana,Lodwar,TKL,"  3° 7'12.13""N"," 35°35'43.25""E",3.1200,35.59534722
+Turkana,Lodwar,County commissioner,"  3° 7'5.80""N"," 35°36'11.51""E",3.1183,35.60319722
+Turkana,Lodwar,county Treasury,"  3° 6'40.11""N"," 35°37'4.40""E",3.1111,35.61788889
+Turkana,Lodwar,KNA,"  3° 7'1.32""N"," 35°36'9.82""E",3.1170,35.60272778
+Mandera,Mandera,TKL,"  3°56'21.26""N"," 41°51'34.78""E",3.9392,41.85966111
+Mandera,Mandera,County commissioner,"  3°56'22.09""N"," 41°51'46.59""E",3.9395,41.86294167
+Mandera,Mandera,Geneva,"  3°56'29.96""N"," 41°51'59.35""E",3.9417,41.86648611
+Mandera,Mandera,KNA,"  3°56'21.53""N"," 41°51'43.23""E",3.9393,41.86200833
+Marsabit,Marsabit,TKL,"  2°19'39.43""N"," 37°59'12.77""E",2.3276,37.98688056
+Marsabit,Marsabit,county commissioner,"  2°19'31.16""N"," 37°59'11.15""E",2.3253,37.98643056
+Marsabit,Marsabit,Police,"  2°19'26.39""N"," 37°59'15.96""E",2.3240,37.98776667
+Marsabit,Marsabit,Refferal hospital,"  2°19'25.12""N"," 37°59'27.34""E",2.3236,37.99092778
+Nyandarua,Olkalau,SFC,"  0°16'16.09""S"," 36°22'28.21""E",-0.2711,36.37450278
+Nyandarua,Olkalau,County commissioner,"  0°17'25.09""S"," 36°22'31.95""E",-0.2903,36.37554167
+Nyandarua,Olkalau,Hospita A,"  0°15'21.36""S"," 36°22'30.19""E",-0.2559,36.37505278
+Nyandarua,Olkalau,PSB,"  0°16'49.52""S"," 36°22'39.46""E",-0.2804,36.37762778
+,,,,,,

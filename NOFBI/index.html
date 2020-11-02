@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Government Projects</title>
+	<script type="text/javascript" src="d3.min.js"></script>
+	<script type="text/javascript" src="d3.v3.min.js"></script>
+</head>
+
+<body>
+
+<div id="vis" style="position: absolute; top: 40px; left: 100px;"></div>
+
+<div id="map" style="position: absolute; top: 0px; left: 100px;"></div>
+<div id="map2" style="position: absolute; top: 0px; left: 100px;"></div>
+
+<script type="text/javascript">
+
+
+var width  = 700;
+var height = 600;
+
+var vis = d3.select("#vis")
+  		.append("svg")
+    	.attr("width", 200)
+    	.attr("height", 200)
+
+
+var map = d3.select("#map")
+		.append("svg")
+		.attr("width",width)
+		.attr("height",height)
+
+var map2 = d3.select("#map2")
+        .append("svg")
+        .attr("width",width)
+        .attr("height",height)        
+
+
+var colorRange  = ["#1b9e77","#d95f02","#7570b3","#e7298a","#66a61e","#e6ab02","#a6761d"];
+var colorDomain = [0,10,20,30,40,50,60];
+var labels = ["NOFBI by ZTE","NOFBI by Sagem","NOFBI by Huawei","NOFBI II","NOFBI TLK","NOFBI TLK Proposed","NOFBI Wireless"];
+var color  = d3.scale.linear().domain(colorDomain).range(colorRange);
+
+
+
+var scale0      = 3000;
+
+var projection  = d3.geo.mercator()
+					.scale(scale0)
+					.center([37,0.5])
+					.translate([width/2, height/2]);
+
+var path        = d3.geo.path()
+                     .projection(projection);
+
+
+
+
+selectNOFBI();
+function selectNOFBI(){
+    d3.json("json/kenya_counties_data.geojson", function(json1) { 
+      map.selectAll("path")
+      .data(json1.features)
+      .enter()
+      .append("path")
+        .attr("d", path)
+        .style("fill", "transparent")
+        .style("stroke-width", "1")
+        .style("stroke", "lightgrey");   
+    d3.csv("csv/LAN.csv", function(csv) {
+            map.selectAll(".point")
+                .data(csv)
+                .enter()
+                .append("circle")
+                .attr("cx", function (d) {
+                    
+                       return projection([d.Latitude_DD, d.Longitude_DD])[0]; 
+                    
+                    })
+                .attr("cy", function (d) {
+                    
+                     return projection([d.Latitude_DD, d.Longitude_DD])[1];
+                    
+                })
+                .attr("r", "3px")
+                .attr("class","point") 
+                .style("opacity", 0.5)                
+                .style("fill","brown")
+            })
+    d3.csv("csv/Towns_Custom.csv",function(csv2){        
+            map2.selectAll("text")
+                .data(csv2)
+                .enter()
+                .append("text")
+                .text(function(d){
+                   if(d.TOWN.match(/Nakuru/) || d.TOWN.match(/Mombasa/) || d.TOWN.match(/Busia/) ||
+                        d.TOWN.match(/Lodwar/) || d.TOWN.match(/Mandera/) || d.TOWN.match(/Nairobi/) || d.TOWN.match(/Garissa/)){ 
+                    return d.TOWN;
+                }})
+                .attr('x', function(d){
+                    
+                    return projection([d.POINT_X, d.POINT_Y])[0];
+                })
+                
+                .attr('y', function(d){
+                    
+                    return projection([d.POINT_X, d.POINT_Y])[1];
+                })
+                .attr("fill","black")
+                .attr("font-size","18px")
+            })
+    });  
+}	
+legend();
+function legend(){
+    map.selectAll(".legend_rect")
+    .append("map")
+    .data(colorRange)
+    .enter()
+    .append("rect")
+    .attr("class","legend_rect")
+    .attr("x",10)
+    .attr("y",function(d,i){
+         return  (i * 20)+100;
+    })
+    .attr("width",10)
+    .attr("height",17)
+    .text(function(d,i){return labels[i];})
+    .attr("fill",function(d){return d;});
+    
+    map.selectAll(".legend_text")
+    .append("map")
+    .data(colorDomain)
+    .enter()
+    .append("text")
+    .attr("class","legend_text")
+    .attr("x",25)
+    .attr("font-size","11px")
+    .style("fill","black")
+    .attr("y", function(d, i){ return  (i * 21)+110;})
+    .text(function(d, i){ return labels[i]; });
+}
+console.log();
+networks();
+function networks(){
+    d3.json("json/Roads.json", function(json){
+
+            map2.selectAll("path")
+            .data(json.features)
+            .enter()
+            .append("path")
+            .attr("d",path)
+            .attr("class","road")
+
+            .attr("id",function(d){
+                return d.properties.NOFBI;
+            })
+            .style("fill",'transparent')
+            .style("stroke","blue")
+            .style("stroke-width","2px")
+            
+    d3.selectAll(".road")
+      .attr("fill",function(d){
+        
+         d3.selectAll("#"+"Huawei")
+           .style("stroke","#7570b3");
+
+            d3.selectAll("#"+"TLK")
+           .style("stroke","#66a61e");
+
+           if(this.id.match(/Sagem/)){d3.select(this).style("stroke","#d95f02");} 
+           if(this.id.match(/Proposed/)){d3.select(this).style("stroke","#e6ab02");} 
+           if(this.id.match(/ZTE/)){d3.select(this).style("stroke","#1b9e77");} 
+           if(this.id.match(/NOFBI II/)){d3.select(this).style("stroke","#e7298a");}
+           if(this.id.match(/Wireless/)){d3.select(this).style("stroke","#a6761d");}
+           if(this.id===""){d3.select(this).remove();}
+         });
+         });
+}
+
+</script>
+</body>
+</html>
